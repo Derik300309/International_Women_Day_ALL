@@ -11,15 +11,43 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     padding: 0 20px;
 }
-svg
+header
 {
-  width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
 }
-svg path
+div svg
+{
+  max-width: 100%;
+  z-index: 999;
+}
+div svg path
 {
     fill: none;
     stroke: #ffffff;
-    stroke-width: 3px;
+    stroke-width: 4px;
+}
+.bouquet
+{
+    z-index: -1;
+    position: absolute;
+    max-width: 100%;
+    transform: translateY(20%);
+}
+.fade
+{
+    animation: Fade 5s 1;
+}
+@keyframes Fade {
+    0%{
+        transform: translateY(150%);
+    }
+    100%{
+        transform: translateY(20%);
+    }
 }
