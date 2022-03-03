@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    width: 100%;
 }
 body
 {
@@ -12,25 +13,37 @@ body
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 0 20px;
 }
 header
 {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 100%;
+    width: 100%;
 }
-div svg
+#lineDrawing
 {
-  max-width: 100%;
-  z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-div svg path
+#lineDrawing svg
+{
+  width: 100%;
+  z-index: 999;
+  position: relative;
+}
+#lineDrawing svg path
 {
     fill: none;
     stroke: #ffffff;
     stroke-width: 4px;
+}
+#lineDrawing .line
+{
+    width: 100%;
+    position: absolute;
+    transform: scale(0.8);
 }
 .bouquet
 {
@@ -43,11 +56,34 @@ div svg path
 {
     animation: Fade 5s 1;
 }
+.dot{
+    width:35px;
+    height:35px;
+    position:absolute;
+    background: url(../img/flow.png);
+    background-size: 100% 100%;
+    top: 0;
+    left: 0;
+  }
+#container
+{
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
 @keyframes Fade {
     0%{
         transform: translateY(150%);
     }
     100%{
         transform: translateY(20%);
+    }
+}
+@media(max-width: 768px)
+{
+    #lineDrawing .line
+    {
+        transform: scale(1);
     }
 }
